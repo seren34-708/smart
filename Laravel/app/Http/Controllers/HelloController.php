@@ -8,8 +8,9 @@ use Illuminate\Http\Response;
 
 class HelloController extends Controller {
   public function index(){
-    $date = ['msg'=>''];
-    return view('hello.index', $date);
+    $msg = ['msg'=>''];
+    $date = ['date' => ['one', 'two', 'three']];
+    return view('hello.index', $msg, $date);
   }
 
   public function post(Request $request){

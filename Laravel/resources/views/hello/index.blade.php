@@ -11,6 +11,15 @@
     @else
     <p>お名前を入力してください</p>
     @endif
+
+    @if ($date)
+    @foreach($date as $i)
+    <li>{{$i}}</li>
+    @endforeach
+    @else
+    <p>dateがない</p>
+    @endif
+
     <form class="" method="POST" action="/hello">
       {{ csrf_field() }}
       <input type="text" name="name">
