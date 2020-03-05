@@ -6,8 +6,12 @@
   </head>
   <body>
     <h1>Blade</h1>
+    @if ($msg)
     <p>{{$msg}}</p>
-    <form class="" method="POST" action="/hello" method="post">
+    @else
+    <p>お名前を入力してください</p>
+    @endif
+    <form class="" method="POST" action="/hello">
       {{ csrf_field() }}
       <input type="text" name="name">
       <input type="submit">

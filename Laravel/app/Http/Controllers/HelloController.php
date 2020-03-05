@@ -8,13 +8,11 @@ use Illuminate\Http\Response;
 
 class HelloController extends Controller {
   public function index(){
-    $date = ['msg'=>'名前入力'];
+    $date = ['msg'=>''];
     return view('hello.index', $date);
   }
 
   public function post(Request $request){
-    $msg = $request->name;
-    $date = ['msg'=>$msg . 'さん'];
-    return view('hello.index', $date);
+    return view('hello.index', ['msg'=>$request->name]);
   }
 }
